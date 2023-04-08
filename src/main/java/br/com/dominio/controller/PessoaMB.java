@@ -25,7 +25,6 @@ public class PessoaMB implements Serializable {
 		pessoas.add(pessoa);
 		limpar();
 		return null;
-
 	}
 
 	private void limpar() {

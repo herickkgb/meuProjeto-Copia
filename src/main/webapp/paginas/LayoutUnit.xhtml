@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Treninamento JSF e PrimeFaces</title>
+
+	<h:outputStylesheet library="css" name="file.css" />
+	<h:outputScript library="js" name="locale.js" />
+</h:head>
+<h:body>
+
+
+
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="130" header="Topo do Layout">
+
+			<header>
+				<p:graphicImage library="imagens" name="Oficial.png" width="200" />
+			</header>
+
+		</p:layoutUnit>
+
+		<p:layoutUnit position="west" header="Menu lateral" resizable="true"
+			collapsible="true" size="230">
+			<h:form>
+
+				<p:menu style="width:100%">
+					<p:menuitem value="Home" outcome="/CadastroPessoa.xhtml" />
+					<p:menuitem value="Cadastro" />
+					<p:menuitem value="Consulta" />
+
+				</p:menu>
+
+			</h:form>
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center">
+
+			<h:form>
+				<p:editor />
+			</h:form>
+
+		</p:layoutUnit>
+
+		<p:layoutUnit position="south" size="130" header="footer do Layout">
+
+
+		</p:layoutUnit>
+
+	</p:layout>
+
+</h:body>
+</html>

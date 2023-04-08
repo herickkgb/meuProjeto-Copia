@@ -22,30 +22,55 @@
 		<p:panel header="Cadastro de Clientes">
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Nome" />
-				<p:inputText value="#{bean.pessoa.nome}" size="50"/>
+				<p:inputText value="#{bean.pessoa.nome}" size="50" />
 
-				<p:outputLabel value="E-mail"  />
-				<p:inputText value="#{bean.pessoa.email}" size="50"/>
+				<p:outputLabel value="E-mail" />
+				<p:inputText value="#{bean.pessoa.email}" size="50" />
 			</h:panelGrid>
 
 		</p:panel>
 
 		<p:outputLabel />
-		<p:commandButton styleClass="buttonAdicionar" value="Adicionar" action="#{bean.adicionar}"
-			update="form tabelaPessoa" />
+		<p:commandButton styleClass="buttonAdicionar" value="Adicionar"
+			action="#{bean.adicionar}" update="form tabelaPessoa"
+			style="margin-top:10px" />
 	</h:form>
 
 	<h1>Lista de pessoas</h1>
 
-	<p:dataTable id="tabelaPessoa" style="tablePessoa" value="#{bean.pessoas}" var="p"
-		border="1">
+	<p:dataTable id="tabelaPessoa" style="tablePessoa"
+		value="#{bean.pessoas}" var="p" border="1">
 		<p:column headerText="Nome">#{p.nome}</p:column>
 		<p:column headerText="E-mail">#{p.email}</p:column>
-		<p:column styleClass="columnEditar" headerText="Editar" width="80" >
-			<p:button value="Editar" styleClass="btnEditar"
+		<p:column styleClass="columnEditar" headerText="Editar" width="80">
+			<p:button value="Editar"
 				outcome="/paginas/Sucesso.xhtml?parametro=#{p.nome}" />
 		</p:column>
 	</p:dataTable>
 
+	<p:toolbar style="margin-top: 20px">
+
+
+		<f:facet name="left">
+
+			<span class="ui-separator"> <span
+				class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			<p:button value="Entrada de texto com primeFaces"
+				icon=" ui-icon-plus" outcome="/primefaces/EntradaTexto.xhtml" />
+
+			<span class="ui-separator"> <span
+				class="ui-icon ui-icon-grip-dotted-vertical" />
+			</span>
+			
+			<p:button value="Exemplo LayoutUnit"
+				icon=" ui-icon-plus" outcome="/paginas/LayoutUnit.xhtml" />
+
+
+		</f:facet>
+
+
+
+	</p:toolbar>
 </h:body>
 </html>
