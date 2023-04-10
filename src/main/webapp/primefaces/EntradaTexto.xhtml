@@ -20,62 +20,10 @@
 
 	</header>
 
+
+
+
 	<div style="margin: 20px">
-		<h1>Campos de entrada de texto</h1>
-
-		<p:messages autoUpdate="true" id="msg" />
-
-
-		<h:form id="form">
-
-			<p:panelGrid columns="2">
-				<p:outputLabel value="Nome" for="nome" />
-				<p:inputText id="nome" required="true"
-					requiredMessage="O nome é Obrigatorio!" maxlength="35" size="40"
-					placeholder="Insira o nome aqui"
-					title="O mouse está sobre o componente" />
-
-			</p:panelGrid>
-
-		</h:form>
-
-		<div>
-			<h2>Campos de password</h2>
-			<p:messages autoUpdate="true" id="msgPassword" />
-
-			<h:form id="formPassword">
-
-				<p:panelGrid columns="2">
-					<p:outputLabel value="Senha" for="senha" />
-
-					<p:password id="senha" feedback="true" weakLabel="Muito fraca"
-						goodLabel="Senha razoável" strongLabel="Senha forte" inline="true"
-						placeholder="A senha e obrigatória" size="30" required="true"
-						promptLabel="Informe uma senha" match="confirma"
-						validatorMessage="A senha ea conrfirmação estão diferentes" />
-
-					<p:outputLabel value="Confirme a senha" for="confirma" />
-					<p:password id="confirma" rendered="true" size="30" />
-				</p:panelGrid>
-				<br />
-				<p:commandButton value="Cadastrar senha" icon="pi pi-check" />
-
-			</h:form>
-
-		</div>
-
-		<div>
-			<h:form>
-
-				<h1>Area de texto</h1>
-				<p:inputTextarea rows="6" style="width: 50%" placeholder="Descrição"
-					maxlength="1000" counter="saida"
-					counterTemplate="{0} caracteres restante(s)" />
-				<br />
-				<p:outputLabel id="saida" />
-
-			</h:form>
-		</div>
 
 		<div>
 
@@ -107,13 +55,122 @@
 
 					</f:facet>
 
-
-
-
 				</p:toolbar>
 
 			</h:form>
 
+		</div>
+
+		<!-- divisão -->
+		<hr />
+		<div>
+			<h1>Campos de entrada de texto</h1>
+
+			<p:messages autoUpdate="true" id="msg" />
+
+
+			<h:form id="form">
+
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Nome" for="nome" />
+					<p:inputText id="nome" required="true"
+						requiredMessage="O nome é Obrigatorio!" maxlength="35" size="40"
+						placeholder="Insira o nome aqui"
+						title="O mouse está sobre o componente" />
+
+				</p:panelGrid>
+
+			</h:form>
+		</div>
+
+		<!-- divisão -->
+		<hr />
+		<div>
+			<h2>Campos de password</h2>
+			<p:messages autoUpdate="true" id="msgPassword" />
+
+			<h:form id="formPassword">
+
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Senha" for="senha" />
+
+					<p:password id="senha" feedback="true" weakLabel="Muito fraca"
+						goodLabel="Senha razoável" strongLabel="Senha forte" inline="true"
+						placeholder="A senha e obrigatória" size="30" required="true"
+						promptLabel="Informe uma senha" match="confirma"
+						validatorMessage="A senha ea conrfirmação estão diferentes" />
+
+					<p:outputLabel value="Confirme a senha" for="confirma" />
+					<p:password id="confirma" rendered="true" size="30" />
+				</p:panelGrid>
+				<br />
+				<p:commandButton value="Cadastrar senha" icon="pi pi-check" />
+
+			</h:form>
+
+		</div>
+
+		<!-- divisão -->
+		<hr />
+		<div>
+			<h:form>
+
+				<h1>Area de texto</h1>
+				<p:inputTextarea rows="6" style="width: 50%" placeholder="Descrição"
+					maxlength="1000" counter="saida"
+					counterTemplate="{0} caracteres restante(s)" />
+				<br />
+				<p:outputLabel id="saida" />
+
+			</h:form>
+		</div>
+
+
+		<!-- divisão -->
+		<hr />
+		<div>
+			<h1>Select one menu</h1>
+			<h:form id="form4">
+				<p:panelGrid columns="2">
+
+					<h:outputText value="Evento" />
+					<p:selectOneMenu value="#{atividadeMB.atividade.nome}"
+						filter="true">
+						<f:selectItem itemLabel="Disciplina escolares"
+							itemValue="evento 1" />
+						<f:selectItem itemLabel="Semana do meio ambiente"
+							itemValue="evento 2" />
+						<f:selectItem itemLabel="Workshop programação"
+							itemValue="evento 3" />
+					</p:selectOneMenu>
+					<p:commandButton value="Enviar" update="labal" />
+					<p:outputLabel value="#{atividadeMB.atividade.nome}" id="labal" />
+
+				</p:panelGrid>
+			</h:form>
+		</div>
+
+
+		<!-- divisão -->
+		<hr />
+		<div>
+			<h1>Select one menu dinamico</h1>
+			<h:form id="form5">
+				<p:panelGrid columns="2">
+
+					<h:outputText value="Evento" />
+					<p:selectOneMenu value="#{atividadeMB.atividade.tipoatividade}"
+						filter="true">
+						<f:selectItems value="#{atividadeMB.atividades}" var="listDeEnums"
+							itemValue="#{listDeEnums}" itemLabel="#{listDeEnums.descricao}" />
+					</p:selectOneMenu>
+					<p:commandButton value="Enviar" update="labal" />
+					<p:outputLabel
+						value="#{atividadeMB.atividade.tipoatividade.descricao}"
+						id="labal" />
+
+				</p:panelGrid>
+			</h:form>
 		</div>
 
 	</div>
