@@ -11,6 +11,7 @@ import br.com.medicamento.model.Base;
 public class DAO<T extends Base> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	private static EntityManager manager = ConnectionFactory.getEntityManager();
 
 	public T buscaPorId(Class<T> clazz, Long id) {
